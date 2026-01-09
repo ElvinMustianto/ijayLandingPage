@@ -1,0 +1,70 @@
+/* src/assets/main.css */
+
+/* Reset dasar + full screen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: white;
+}
+
+/* —— GAYA DARI KODE ANDA —— */
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/* Hilangkan layout flex & grid di body/#app (karena itu penyebab centered & kecil) */
+/* ⚠️ Ini yang membuat tampilan tidak full-screen → kita hapus logika ini */
+/* ❌ Jangan pakai ini:
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+*/
+
+/* Utility: container untuk konten terbatas */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+/* Responsif padding */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Opsional: hindari efek pull-to-refresh & overscroll glow */
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
